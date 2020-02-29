@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+    <h1>PIZZA-GO</h1>
+    <div class="container">
+      <form class="pizzaOrder">
+        <div class="sizeOfPizza">
+          <label for="pizzaSize">Size:</label>
+          <select class="pizzaSize" name="">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
+
+        </div>
+
+        <div class="crustOfPizza">
+          <label for="pizzaCrust">Please select type of crust:</label>
+          <select class="pizzaCrust">
+            <option value="thin">Thin</option>
+            <option value="thick">Thick</option>
+            <option value="crispy">Crispy</option>
+            <option value="glutenFree">Gluten Free</option>
+          </select>
+
+        </div>
+
+        <div class="toppings">
+          <input type="checkbox" id="topping1" name="topping1" value="">
+          <label for="topping1">Pepperoni</label>
+          <input type="checkbox" id="topping2" name="topping2" value="">
+          <label for="topping2">Bacon</label>
+          <input type="checkbox" id="topping3" name="topping3" value="">
+          <label for="topping3">Sausage</label>
+          <input type="checkbox" id="topping4" name="topping4" value="">
+          <label for="topping4">Extra Cheese</label>
+          <input type="checkbox" id="topping5" name="topping5" value="">
+          <label for="topping5">Onion</label>
+          <input type="checkbox" id="topping6" name="topping6" value="">
+          <label for="topping6">Mushroom</label>
+          <input type="checkbox" id="topping7" name="topping7" value="">
+          <label for="topping7">Green Pepper</label>
+
+        </div>
+      </form>
+      <div class="addPizza">
+        <button class=addOrder>Want another pizza?</button>
+      </div>
+      <div class="submitOrder">
+        <button class="placeOrder" type="submit">Place Order</button>
+      </div>
+      <div>
+        <button class="delivery">Want your order delivered to you?</button>
+      </div>
+      <div>
+        <button class="checkout">Checkout</button>
+      </div>
+
+    </div>
+
+  </body>
+</html>
