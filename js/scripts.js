@@ -1,65 +1,97 @@
-// Business Logic
-function Order(size, crust, toppings){
+var price , crustPrice, toppingsPrice ;
+let total = 0;
+let toppingsTotal = 0;
+function Order(name, size, crust, toppings, total){
+  this.name = name;
   this.size = size;
   this.crust = crust;
   this.toppings = toppings;
+  this.total = total;
 }
+
 
 // User Interface Logic
 $(document).ready(function(){
-  $(".placeOrder").submit(function(){
-    var pizzasize = [];
-    var pizzacrust = [];
-    $.each($(".pizzaSize option:selected"), function(){
-      pizzasize.push($(this).val());
-    })
-    $.each($(".pizzaCrust option:selected"), function(){
-      pizzacrust.push($(this).val());
-    })
-    $(".toppings").val();
-    if ($(".toppings").is(":checked"))
-    {
-      getSelection().val()
+  // $("button.proceed").click(function(){
+  //   $("button.proceed").hide();
+  //   $("#information").hide();
+  //   $("div.choise").slideDown(1000);
+  // });
+  $("button.proceed").click(function(event){
+   let pizzaName = $(".pizzaName option:selected").val();
+   let pizzaSize = $(".pizzaSize option:selected").val();
+   let pizzaCrust = $(".pizzaCrust option:selected").val();
+   let pizzaToppings = [];
+   $.each($("input[name='toppings']:checked"), function(){            
+       pizzaToppings.push($(this).val());
+   });
+   console.log(pizzaToppings.join(", "));
 
+   switch(pizzaSize){
+    case "0":
+      price =0;
+    break;
+    case "large":
+       price = 1200;
+       console.log("Large:"+price);
+     break;
+     case "medium":
+       price = 850;
+       console.log("Medium:"+price);
+     break;
+     case "small":
+       price = 600;
+       console.log("Small:"+price);
+     default:
+       console.log("error"); 
+   }
+   switch(pizzaCrust){
+      case "0":
+        crustPrice = 0;
+      break;
+      case "thin":
+        crustPrice = 200;
+      break;
+      case "thick":
+        crustPrice = 250;
+      break;
+      case "crispy":
+        crustPrice = 180;
+      break;
+      case "glutenFree":
+        crustPrice = 180;
+      break;
+      default:
+        console.log("No price"); 
     }
-  })
-  $(".addOrder").click(function(){
-    $(".pizzaOrder").append('<div class="sizeOfPizza">' +
-    '<label for="pizzaSize">Size:</label>' +
-    '<select class="pizzaSize" name="">' +
-      '<option value="small">Small</option>' +
-      '<option value="medium">Medium</option>' +
-      '<option value="large">Large</option>' +
-    '</select>' +
- '</div>' +
+    // let topping_value = ptopping.length*50;
+    // console.log("toppins value" + topping_value);
 
-  '<div class="crustOfPizza">' +
-    '<label for="pizzaCrust">Please select type of crust:</label>' +
-    '<select class="pizzaCrust">' +
-      '<option value="thin">Thin</option>' +
-      '<option value="thick">Thick</option>' +
-      '<option value="crispy">Crispy</option>' +
-      '<option value="glutenFree">Gluten Free</option>' +
-    '</select>' +
+    pizzaToppings.forEach(function(pizzaTopping, index, _pizzaToppings){
+      _pizzaToppings[index] = pizzaTopping * 50;
+      toppingsTotal += pizzaTopping;
+    })
 
-  '</div>' +
+    if((pizzaSize == "0") && (pizzaCrust == "0")){
+      console.log("nothing selected");
+      $("placeOrder").show();
+      $("div.choise").hide();
+      alert("Please select pizza size and crust"); 
+    }
+    else{
+      $("placeOrder").hide();
+      $("div.choise").slideDown(1000);
+    }
 
-  '<div class="toppings">' +
-    '<input type="checkbox" id="topping1" name="" value="">' +
-    '<label for="topping1">Pepperoni</label>' +
-    '<input type="checkbox" id="topping2" name="" value="">' +
-    '<label for="topping2">Bacon</label>' +
-    '<input type="checkbox" id="topping3" name="" value="">' +
-    <label for="topping3">Sausage</label>
-    <input type="checkbox" id="topping4" name="" value="">
-    <label for="topping4">Extra Cheese</label>
-    <input type="checkbox" id="topping5" name="" value="">
-    <label for="topping5">Onion</label>
-    <input type="checkbox" id="topping6" name="" value="">
-    <label for="topping6">Mushroom</label>
-    <input type="checkbox" id="topping7" name="" value="">
-    <label for="topping7">Green Pepper</label>
+    total = price + crustPrice + toppingsTotal;
+    console.log(total);
+    let checkoutTotal =0;
+    checkoutTotal = checkoutTotal + total;
 
-  </div>')
-  })
-})
+    $("#pizzaname").html($(".name option:selected").val());
+    $("#pizzasize").html( $("#size option:selected").val());
+    $("#pizzacrust").html($("#crust option:selected").val());
+    $("#pizzatopping").html(ptopping.join(", "));
+    $("#totals").html(total);
+}
+
