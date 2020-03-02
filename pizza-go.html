@@ -12,55 +12,85 @@
   <body>
     <h1>PIZZA-GO</h1>
     <div class="container">
-      <form class="pizzaOrder">
-        <div class="nameOfPizza">
-          <label for="pizzaName">Please select your choice of pizza:</label>
-          <select class="pizzaName">
-            <option value="pepperoniPizza">Pepperoni Pizza</option>
-            <option value="hawaiian">Hawaiian Pizza</option>
-            <option value="bbq">BBQ Chicken Pizza</option>
-            <option value="meatLovers">Meat Lover's Pizza</option>
-          </select>
+      <div class="row">
+        <div class="col-md-6">
+          <form class="pizzaOrder">
+            <div class="nameOfPizza">
+              <label for="pizzaName">Please select your choice of pizza:</label>
+              <select class="pizzaName">
+                <option value="pepperoniPizza">Pepperoni Pizza</option>
+                <option value="hawaiian">Hawaiian Pizza</option>
+                <option value="bbq">BBQ Chicken Pizza</option>
+                <option value="meatLovers">Meat Lover's Pizza</option>
+              </select>
+    
+            </div>
+            <div class="sizeOfPizza">
+              <label for="pizzaSize">Size:</label>
+              <select class="pizzaSize" name="">
+                <option value="small">Small  ksh600</option>
+                <option value="medium">Medium  ksh800</option>
+                <option value="large">Large  ksh1000</option>
+              </select>
+            </div>
+    
+            <div class="crustOfPizza">
+              <label for="pizzaCrust">Please select type of crust:</label>
+              <select class="pizzaCrust">
+                <option value="thin">Thin  ksh150</option>
+                <option value="thick">Thick  ksh200</option>
+                <option value="crispy">Crispy  ksh280</option>
+                <option value="glutenFree">Gluten Free  ksh230</option>
+              </select>
+    
+            </div>
+    
+            <div class="toppings">
+              <input type="checkbox" id="topping1" name="toppings" value="">
+              <label for="topping1">Pepperoni</label>
+              <input type="checkbox" id="topping2" name="toppings" value="">
+              <label for="topping2">Bacon</label>
+              <input type="checkbox" id="topping3" name="toppings" value="">
+              <label for="topping3">Sausage</label>
+              <input type="checkbox" id="topping4" name="toppings" value="">
+              <label for="topping4">Extra Cheese</label>
+              <input type="checkbox" id="topping5" name="toppings" value="">
+              <label for="topping5">Onion</label>
+              <input type="checkbox" id="topping6" name="toppings" value="">
+              <label for="topping6">Mushroom</label>
+              <input type="checkbox" id="topping7" name="toppings" value="">
+              <label for="topping7">Green Pepper</label>
+    
+            </div>
+          </form>
+    
+        </div>
+        <div class="details col-md-6">
+          <table class="table-sm tablelog">
+            <thead>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </thead>
+            <tbody>
+              <td id="pizzaname"></td>
+              <td id="pizzasize"></td>
+              <td id="pizzacrust"></td>
+              <td id="pizzatoppings"></td>
+              <td id="total"></td>
+            </tbody>
+          </table>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
 
         </div>
-        <div class="sizeOfPizza">
-          <label for="pizzaSize">Size:</label>
-          <select class="pizzaSize" name="">
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-          </select>
-        </div>
-
-        <div class="crustOfPizza">
-          <label for="pizzaCrust">Please select type of crust:</label>
-          <select class="pizzaCrust">
-            <option value="thin">Thin</option>
-            <option value="thick">Thick</option>
-            <option value="crispy">Crispy</option>
-            <option value="glutenFree">Gluten Free</option>
-          </select>
-
-        </div>
-
-        <div class="toppings">
-          <input type="checkbox" id="topping1" name="toppings" value="">
-          <label for="topping1">Pepperoni</label>
-          <input type="checkbox" id="topping2" name="toppings" value="">
-          <label for="topping2">Bacon</label>
-          <input type="checkbox" id="topping3" name="toppings" value="">
-          <label for="topping3">Sausage</label>
-          <input type="checkbox" id="topping4" name="toppings" value="">
-          <label for="topping4">Extra Cheese</label>
-          <input type="checkbox" id="topping5" name="toppings" value="">
-          <label for="topping5">Onion</label>
-          <input type="checkbox" id="topping6" name="toppings" value="">
-          <label for="topping6">Mushroom</label>
-          <input type="checkbox" id="topping7" name="toppings" value="">
-          <label for="topping7">Green Pepper</label>
-
-        </div>
-      </form>
+      </div>
       <div class="submitOrder">
         <button class="placeOrder" type="submit">Place Order</button>
       </div>
@@ -72,6 +102,16 @@
       </div>
       <div class="checkoutOrder">
         <button class="checkout">Checkout</button>
+      </div>
+      <div class="delivery">
+        <form action="">
+          <div class="form-group">
+            <input type="text" id="name" class="form-control col-md-4" placeholder="Enter your name:">
+            <input type="number" id="phone" class="form-control col-md-4" placeholder="Enter your phone number:">
+            <input type="text" id="destination" class="form-control col-md-4" placeholder="Where do you want it delivered?">
+            <button id="inclusiveDelivery">Continue</button>
+          </div>
+        </form>
       </div>
 
     </div>
