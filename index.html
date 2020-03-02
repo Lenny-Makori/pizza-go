@@ -69,11 +69,11 @@
           <table class="table-sm tablelog">
             <thead>
               <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td scope="col">Name</td>
+                <td scope="col">Size</td>
+                <td scope="col">Crust</td>
+                <td>Topping</td>
+                <td>Total</td>
               </tr>
             </thead>
             <tbody>
@@ -84,10 +84,11 @@
               <td id="total"></td>
             </tbody>
           </table>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+          <p id="pizzatotal"></p>
+          <p id="totalbill"></p>
+          <p id="addedprice"></p>
+          <p id="finalmessage"></p>
+          
 
         </div>
       </div>
@@ -98,7 +99,7 @@
         <button class=addOrder>Want another pizza?</button>
       </div>
       <div class="deliveryServices">
-        <button class="delivery">Want your order delivered to you?</button>
+        <button id="delivery">Want your order delivered to you?</button>
       </div>
       <div class="checkoutOrder">
         <button class="checkout">Checkout</button>
@@ -113,6 +114,9 @@
           </div>
         </form>
       </div>
+      <div id="pizzatotal"></div>
+      <div id="totalbill"></div>
+      
 
     </div>
 

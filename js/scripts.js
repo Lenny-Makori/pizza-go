@@ -1,3 +1,4 @@
+// Business Logic
 var price, crustPrice;
 let total = 0;
 function Order(name, size, crust, toppings, total){
@@ -9,7 +10,7 @@ function Order(name, size, crust, toppings, total){
 }
 
 
-// proceed button
+// User Interface logic
 $(document).ready(function(){
   
   $(".placeOrder").click(function(event){
@@ -84,7 +85,6 @@ $(document).ready(function(){
     $("#pizzatopping").html(pizzaToppings.join(", "));
     $("#totals").html(total);
     
-// Add pizza button
     $("button.addOrder").click(function(){
       let pizzaName = $(".name option:selected").val();
       let pizzaSize = $("#size option:selected").val();
@@ -142,10 +142,10 @@ $(document).ready(function(){
 
         checkoutTotal = checkoutTotal + total;
         console.log(checkoutTotal);
-      // constractor function
+
       var newOrder = new Order(pizzaName, pizzaSize, pizzaCrust, pizzaToppings, total);
 
-      $(".details").append('<tr><td id="pizzaname">'+newOrder.pizzaName +'</td><td id="pizzasize">' + newOrder.pizzaSize + '</td><td id="pizzacrust">'+newOrder.pizzaCrust + '</td><td id="pizzatopping">'+newOrder.pizzaToppings+'</td><td id="totals">'+newOrder.total+'</td></tr>');
+      $(".tablelog").append('<tr><td id="pizzaname">'+newOrder.pizzaName +'</td><td id="pizzasize">' + newOrder.pizzaSize + '</td><td id="pizzacrust">'+newOrder.pizzaCrust + '</td><td id="pizzatopping">'+newOrder.pizzaToppings+'</td><td id="totals">'+newOrder.total+'</td></tr>');
       console.log(newOrder);
       
       
@@ -162,16 +162,16 @@ $(document).ready(function(){
     });
 
     // home delivery button
-    $("button.deliver").click(function(){
+    $("button#delivery").click(function(){
       $(".pizzalog").hide();
-      $(".choise h2").hide();
+      $(".details").hide();
       $(".delivery").slideDown(1000);
       $("#addedprice").hide();
-      $("button.deliver").hide();
+      $("button#delivery").hide();
       $("#pizzatotal").hide();
-      let deliceryamount= checkoutTotal+150;
-      console.log("You will pay sh. "+deliceryamount+" on delivery");
-      $("#totalbill").append("Your bill plus delivery fee is: "+deliceryamount);
+      let deliveryCharges= checkoutTotal+150;
+      console.log("You will pay sh. "+deliveryCharges+" on delivery");
+      $("#totalbill").append("Your bill plus delivery fee is: "+deliveryCharges);
     });
 
     // when one clicks place order button
@@ -181,15 +181,15 @@ $(document).ready(function(){
       $("#pizzatotal").hide();
       $(".delivery").hide();
       $("button#inclusiveDelivery").hide();
-      let deliceryamount= checkoutTotal+150;
-      console.log("Final Bill is: "+deliceryamount);
+      let deliveryCharges= checkoutTotal+150;
+      console.log("Final Bill is: "+deliveryCharges);
       let person = $("input#name").val();
       let phone = $("input#phone").val();
       let location = $("input#location").val();
 
       if ($("input#name").val() && $("input#phone").val() && $("input#location").val()!=""){
   
-        $("#finallmessage").append(person+", We have recieved your order and it will be delivered to you at "+location+ ". Prepare sh. "+deliceryamount);
+        $("#finallmessage").append(person+", We have recieved your order and it will be delivered to you at "+location+ ". Prepare sh. "+deliveryCharges);
         $("#totalbill").hide();
         $("#finallmessage").slideDown(1200);
       }
