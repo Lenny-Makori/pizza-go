@@ -15,11 +15,16 @@ $(document).ready(function(){
 
   $(".placeOrder").click(function(event){
     let pizzaName = $(".pizzaName option:selected").val();
+    //alert(pizzaName)
    let pizzaSize = $(".pizzaSize option:selected").val();
+   //alert(pizzaSize)
    let pizzaCrust = $(".pizzaCrust option:selected").val();
+   //alert(pizzaCrust)
    let pizzaToppings = [];
+   //alert(pizzaToppings)
    $.each($("input[name='toppings']:checked"), function(){
     pizzaToppings.push($(this).val());
+    // alert(pizzaToppings)
    });
    console.log(pizzaToppings.join(", "));
 
@@ -80,10 +85,11 @@ $(document).ready(function(){
     checkoutTotal = checkoutTotal + total;
 
     $("#pizzaname").html($(".name option:selected").val());
+
     $("#pizzasize").html( $("#size option:selected").val());
     $("#pizzacrust").html($("#crust option:selected").val());
-    $("#pizzatopping").html(pizzaToppings.join(", "));
-    $("#totals").html(total);
+    $("#pizzatoppings").html(pizzaToppings.join(", "));
+    $("#total").html(total);
 
     $("button.addOrder").click(function(){
       let pizzaName = $("#pizzaName option:selected").val();
@@ -135,7 +141,7 @@ $(document).ready(function(){
           default:
             console.log("No price");
         }
-        let toppingsTotal = pizzaToppings.length*50;
+        let toppingsTotal = pizzaToppings.length*100;
         console.log("toppingsTotal: " + toppingsTotal);
         total = price + crustPrice + toppingsTotal;
         console.log(total);
@@ -145,17 +151,17 @@ $(document).ready(function(){
 
       var newOrder = new Order(pizzaName, pizzaSize, pizzaCrust, pizzaToppings, total);
 
-      $(".tablelog").append('<tr><td id="pizzaname">'+newOrder.pizzaName +'</td><td id="pizzasize">' + newOrder.pizzaSize + '</td><td id="pizzacrust">'+newOrder.pizzaCrust + '</td><td id="pizzatopping">'+newOrder.pizzaToppings+'</td><td id="totals">'+newOrder.total+'</td></tr>');
+      $(".tablelog").append('<tr><td id="totals">'+newOrder.total+'</td></tr>');
       console.log(newOrder);
 
 
 
     });
     // Checkout button
-    $("button.checkout").click(function(){
-      $("buttoncheckout").hide();
+    $("button#checkout").click(function(){
+      $("button#checkout").hide();
       $("button.addOrder").hide();
-      $("button.delivery").show();
+      $("button#delivery").show();
       $("#addedprice").show();
       console.log("Your total bills is sh. "+checkoutTotal);
       $("#pizzatotal").append("Your bill is sh. "+checkoutTotal);
@@ -165,13 +171,21 @@ $(document).ready(function(){
     $("button#delivery").click(function(){
       $(".pizzalog").hide();
       $(".details").hide();
-      $(".deliveryInfo").slideDown();
+      $(".deliveryInfo").show();
       $("#addedprice").hide();
       $("button#delivery").hide();
       $("#pizzatotal").hide();
+      $("button#checkout").hide();
       let deliveryCharges= checkoutTotal+150;
-      console.log("You will pay sh. "+deliveryCharges+" on delivery");
-      $("#totalbill").append("Your bill plus delivery fee is: "+deliveryCharges);
+      console.log("You will pay sh. "+deliveryCharges+" when your order arrives.");
+      $("#totalplusdelivery").append("Your bill plus delivery fee is: "+deliveryCharges);
+    });
+    $("button#inclusiveDelivery").click(function(){
+      var userName = $("#username").val();
+      var userphone = $("#userphone").val();
+      var userDestination = $("#userdestination").val();
+      $(".deliveryInfo").hide();
+      alert(userName + ", your order will be delivered to your location, " + userDestination + ", and you will be contacted on " + userphone);
     });
 
 

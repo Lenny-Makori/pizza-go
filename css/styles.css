@@ -1,9 +1,43 @@
 body{
   text-align: justify;
+  background-color: lightgrey;
 }
-{
+.deliveryInfo{
   display: none;
 }
 .details{
   display: none;
+}
+table, td, th{
+  border: 1px black;
+  border-collapse: collapse;
+}
+#delivery{
+  display: none;
+}
+#chef1{
+  float: left;
+}
+#chef2{
+  float: right;
+}
+.heading{
+  text-align: center;
+  color: red;
+  background-color: lightyellow;
+}
+.chefinfo{
+  text-align: center;
+}
+h2{
+  text-align: center;
+}
+.userorderpizza{
+  background-image: url("../img/background1.jpg");
+  background-position: center;
+}
+.pizzaOrder{
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
