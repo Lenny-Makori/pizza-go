@@ -12,17 +12,9 @@ This is an application that lets a user to order pizza online from the comfort o
 
 You need to have your terminal working and install git to your computer.
 
-```
-Give examples
-```
-
 ## Deployment
 
 If you happen to have modified anything, deploy the site to github pages and see its functionality there.
-
-```
-Give the example
-```
 
 ## Built With
 
@@ -47,4 +39,4 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-* Iacknowledge myself for creating this application.
+* I acknowledge myself for creating this application.
