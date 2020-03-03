@@ -48,18 +48,3 @@ h2{
   font-size: 20px;
 
 }
-.buttons{
-  background-image: url("../img/background2.jpg");
-  background-position: center;
-  color: white;
-  width: 1128px;
-  padding-left: 40px;
-  text-align: center;
-}
-#bottomdetails{
-  margin-bottom: 100px;
-}
-.pizzaAlert{
-  padding-top: 50px;
-  color: darkorange;
-}
