@@ -168,7 +168,24 @@ $(document).ready(function(){
     });
 
     // Home delivery button
-    
+    $("button#delivery").click(function(){
+      $(".pizzalog").hide();
+      $(".deliveryInfo").show();
+      $("#addedprice").hide();
+      $(".tablelog").hide();
+      $("button#delivery").hide();
+      $("button#checkout").hide();
+      let deliveryCharges= checkoutTotal+150;
+      console.log("You will pay sh. "+deliveryCharges+" when your order arrives.");
+      $("#totalplusdelivery").append("Deliver fee is ksh150. Your bill plus delivery fee is: ksh"+deliveryCharges);
+    });
+    $("button#inclusiveDelivery").click(function(){
+      var userName = $("#username").val();
+      var userphone = $("#userphone").val();
+      var userDestination = $("#userdestination").val();
+      $(".deliveryInfo").hide();
+      alert(userName + ", your order will be delivered to your location, " + userDestination + ", and you will be contacted on " + userphone);
+    });
 
 
    event.preventDefault();
