@@ -1,11 +1,11 @@
-# Project Title
+# PIZZA-GO
 
-One Paragraph of project description goes here
+This is an application that lets a user to order pizza online from the comfort of his/her home. Delivery services are also available and the pizza is delivered right to your doorstep.
 
 ## Setup/Installation Requirements
-* Go to lenny-makori.github.io/my-programming-portfolio
-* Go to https://github.com/Lenny-Makori/my-programming-portfolio
-* git clone https://github.com/Lenny-Makori/my-programming-portfolio.git
+* Go to lenny-makori.github.io/pizza-go
+* Go to https://github.com/Lenny-Makori/pizza-go
+* git clone https://github.com/Lenny-Makori/pizza-go.git
 * to get the project to your computer.
 
 ### Prerequisites
