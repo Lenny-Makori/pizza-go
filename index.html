@@ -12,9 +12,42 @@
   <body>
     <h1>PIZZA-GO</h1>
     <h1>Get Your Pizza From The Comfort Of Your Home!!!!</h1>
+    <div class="chefinfo">
+      <p><img id="chef1" src="img/pizza-chef.jpg" alt="">
+      <img id="chef2" src="img/chef1.jpg" width="300px" height="430px" alt="">
+      <strong>We've got the best chefs on the market who make the pizzas in the best way possible</strong></p>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="container">
+      <h2><strong>The types of crusts we have are: </strong></h2>
+      <div class="row">
+          <div class="col-md-3">
+            <img src="img/thin-crust.png" width="270px" height="250px" alt="">
+          </div>
+          <div class="col-md-3">
+            <img src="img/thick-crust.jpg" width="300px" height="250px" alt="">
+          </div>
+          <div class="col-md-3">
+            <img src="img/crispy-crust.jpg" width="300px" height="250px" alt="">
+          </div>
+          <div class="col-md-3">
+            <img src="img/gluten-free-crust.jpg" width="300px" height="250px" alt="">
+          </div>
+      </div>
+    </div>
+      <h2><strong>These are the various toppings we offer:</strong></h2>
+      <img src="img/pepperoni-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/bacon-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/sausage-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/extra-cheese-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/onion-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/mushroom-toppings.jpg" width="400px" height="350px" alt="">
+      <img src="img/greenpepper-toppings.jpg" width="400px" height="350px" alt="">
+
+    <img src="" alt="">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
+          <h2><strong>Order your pizza NOW!!</strong></h2>
           <form class="pizzaOrder">
             <div class="nameOfPizza">
               <label for="pizzaName">Please select your choice of pizza:</label>
@@ -38,7 +71,7 @@
             <div class="crustOfPizza">
               <label for="pizzaCrust">Please select type of crust:</label>
               <select class="pizzaCrust">
-                <option value="thin">Thin  ksh150</option>
+                <option value="thin" style="background-image:url('img/thin-crust.png')">Thin  ksh150</option>
                 <option value="thick">Thick  ksh200</option>
                 <option value="crispy">Crispy  ksh280</option>
                 <option value="glutenFree">Gluten Free  ksh230</option>
@@ -48,19 +81,19 @@
 
             <div class="toppings">
               <input type="checkbox" id="topping1" name="toppings" value="">
-              <label for="topping1">Pepperoni</label>
+              <label for="topping1">Pepperoni --- Ksh100   </label>
               <input type="checkbox" id="topping2" name="toppings" value="">
-              <label for="topping2">Bacon</label>
+              <label for="topping2">Bacon --- Ksh100   </label>
               <input type="checkbox" id="topping3" name="toppings" value="">
-              <label for="topping3">Sausage</label>
+              <label for="topping3">Sausage --- Ksh100   </label><br>
               <input type="checkbox" id="topping4" name="toppings" value="">
-              <label for="topping4">Extra Cheese</label>
+              <label for="topping4">Extra Cheese --- Ksh100   </label>
               <input type="checkbox" id="topping5" name="toppings" value="">
-              <label for="topping5">Onion</label>
+              <label for="topping5">Onion --- Ksh100   </label>
               <input type="checkbox" id="topping6" name="toppings" value="">
-              <label for="topping6">Mushroom</label>
+              <label for="topping6">Mushroom --- Ksh100   </label><br>
               <input type="checkbox" id="topping7" name="toppings" value="">
-              <label for="topping7">Green Pepper</label>
+              <label for="topping7">Green Pepper --- Ksh100   </label>
 
             </div>
           </form>
@@ -70,25 +103,18 @@
           <table class="table-sm tablelog">
             <thead>
               <tr>
-                <td scope="col">Name</td>
-                <td scope="col">Size</td>
-                <td scope="col">Crust</td>
-                <td>Topping</td>
-                <td>Total</td>
+                <td><strong>Total</strong></td>
               </tr>
             </thead>
             <tbody>
-              <td id="pizzaname"></td>
-              <td id="pizzasize"></td>
-              <td id="pizzacrust"></td>
-              <td id="pizzatoppings"></td>
               <td id="total"></td>
             </tbody>
           </table>
           <p id="pizzatotal"></p>
-          <p id="totalbill"></p>
-          <p id="addedprice"></p>
-          <p id="finalmessage"></p>
+          <p id="totalplusdelivery"></p>
+          <p id="deliveryresponse"></p>
+          <!-- <p id="addedprice"></p> -->
+          <!-- <p id="finalmessage"></p> -->
 
 
         </div>
@@ -103,23 +129,22 @@
         <button id="delivery">Want your order delivered to you?</button>
       </div>
       <div class="checkoutOrder">
-        <button class="checkout">Checkout</button>
+        <button id="checkout">Checkout</button>
       </div>
       <div class="delivery">
-        <form action="">
+        <form class="userdeliverydetails">
           <div class="form-group deliveryInfo">
-            <input type="text" id="name" class="form-control col-md-4" placeholder="Enter your name:">
-            <input type="number" id="phone" class="form-control col-md-4" placeholder="Enter your phone number:">
-            <input type="text" id="destination" class="form-control col-md-4" placeholder="Where do you want it delivered?">
+            <input type="text" id="username" class="form-control col-md-4" placeholder="Enter your name:">
+            <input type="number" id="userphone" class="form-control col-md-4" placeholder="Enter your phone number:">
+            <input type="text" id="userdestination" class="form-control col-md-4" placeholder="Where do you want it delivered?">
             <button id="inclusiveDelivery">Continue</button>
           </div>
         </form>
       </div>
-      <div id="pizzatotal"></div>
-      <div id="totalbill"></div>
 
 
     </div>
-
+    <footer>
+    PIZZA-GO (C)</footer>
   </body>
 </html>
